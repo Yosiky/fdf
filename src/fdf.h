@@ -18,12 +18,6 @@
 # include "get_next_line.h"
 # include "matrix.h"
 
-typedef	struct s_pair_int
-{
-	int	first;
-	int	second;
-}	t_pair_int;
-
 typedef struct s_data {
 	void		*img;
 	int			*addr;
