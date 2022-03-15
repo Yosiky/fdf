@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/15 23:12:18 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/15 23:18:34 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <mlx.h>
 # include <unistd.h>
 # include "matrix.h"
-# include "../get_next_line/get_next_line.h"
+# include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 
 typedef struct s_data {
