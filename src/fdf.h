@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/15 23:18:34 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/16 13:25:05 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 # define FDF_H
 
 # include <mlx.h>
+# include <fcntl.h>
 # include <unistd.h>
 # include "matrix.h"
-# include "../gnl/get_next_line.h"
+# include "../libft/get_next_line.h"
 # include "../libft/libft.h"
 
 typedef struct s_data {
@@ -28,7 +29,7 @@ typedef struct s_data {
 	t_matrix	*map;
 }	t_data;
 
-void	ee_exit(const char *str);
-t_map	*load_map(const char *name);
+void		ee_exit(const char *str);
+t_matrix	*load_map(const char *name);
 
 #endif

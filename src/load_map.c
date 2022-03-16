@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:09:49 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/15 22:49:29 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/16 13:41:16 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,23 @@ static int	ft_count_elem(const char *str, char c)
 	return (res);
 }
 
-static t_pair_int	check_size_map(const char *str)
+static t_pair_int	check_size_map(const char *name)
 {
 	t_pair_int	res;
 	char		*str;
 	int			fd;
 
-	fd = open(str, O_RDONLY);
+	fd = open(name, O_RDONLY);
 	if (fd < 0)
 		ee_exit("Error: cann't open file\n");
-	res.second = 1;
+	res.second = 0;
 	str = get_next_line(fd);
 	res.first = ft_count_elem(str, ' ');
 	while (str != NULL)
 	{
+        ++res.second;
 		free(str);
 		str = get_next_line(fd);
-		++res.second;
 	}
 	close(fd);
 	return (res);
@@ -78,7 +78,7 @@ t_matrix	*load_map(const char *name)
 	if (fd < 0)
 		ee_exit("Error: cann't open file\n");
 	i = 0;
-	while (i < map->height)
+	while (i++ < map->height)
 	{
 		str = get_next_line(fd);
 		if (str == NULL)
