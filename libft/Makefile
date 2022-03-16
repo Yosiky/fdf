@@ -34,25 +34,15 @@ SRC =		\
 			ft_strtrim		\
 			ft_substr		\
 			ft_tolower		\
-			ft_toupper
-
-SRC_BONUS =	\
-			ft_lstadd_back_bonus	\
-			ft_lstadd_front_bonus	\
-			ft_lstclear_bonus		\
-			ft_lstdelone_bonus		\
-			ft_lstiter_bonus		\
-			ft_lstlast_bonus		\
-			ft_lstmap_bonus			\
-			ft_lstnew_bonus			\
-			ft_lstsize_bonus
+			ft_toupper		\
+			get_next_line	\
+			get_next_line_utils
 
 OBJS_DIR =	objects
 
-.PHONY:		all clean fclean bonus re
+.PHONY:		all clean fclean re
 
 OBJ =		${addprefix ${OBJS_DIR}/,${SRC:=.o}}
-OBJ_BONUS =	${addprefix ${OBJS_DIR}/,${SRC_BONUS:=.o}}
 
 CFLAGS =	-Wall -Wextra -Werror -g 
 #-O3 -ffast-math
@@ -66,14 +56,11 @@ $(NAME):	${OBJS_DIR} ${OBJ}
 
 all:		${NAME}
 
-bonus:		${OBJ} ${OBJ_BONUS}
-	ar cr ${NAME} ${OBJ} ${OBJ_BONUS}
-
 ${OBJS_DIR}:
 	mkdir -p ${OBJS_DIR}
 
 clean:
-	rm -rf ${OBJ} ${OBJ_BONUS}
+	rm -rf ${OBJ}
 
 fclean: 	clean
 	rm -rf ${NAME}
