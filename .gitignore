@@ -1,2 +1,6 @@
 fdf
 obj/
+CMakeLists.txt
+.idea/
+vgcore.*
+cmake-build-debug/
