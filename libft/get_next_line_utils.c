@@ -6,12 +6,11 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 15:52:28 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/16 14:29:51 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:20:43 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
 
 char	*gnl_memcpy(char *s1, char *s2, size_t len)
 {
