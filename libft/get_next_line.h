@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 15:52:04 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/16 13:24:16 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:09:57 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 32
 # endif
 
 # ifdef __linux__

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eestelle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 21:04:32 by eestelle          #+#    #+#             */
-/*   Updated: 2021/10/16 15:44:18 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 15:51:37 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stddef.h>
 # include <limits.h>
-# include "get_next_line.h"
 
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
