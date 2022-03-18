@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:09:49 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/16 13:41:16 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:01:59 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ t_matrix	*load_map(const char *name)
 			map = NULL;
 			break;
 		}
-		parse(str, ' ', map->arr[i++]);
+		parse(str, ' ', map->arr + i * map->height);
 		free(str);
 	}
 	return (map);

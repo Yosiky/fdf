@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/16 13:34:20 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:02:59 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	print_matrix(t_matrix *map)
 	{
 		for (int j = 0; j < map->width; ++j)
 		{
-			printf("\t%d", map->arr[i][j]);
+			printf("\t%d", *(map->arr + i * map->height + j));
 		}
 		printf("\n");
 	}

@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:58:42 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/16 13:18:25 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:02:29 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_matrix
 {
 	int	width;
 	int	height;
-	int	**arr;
+	int	*arr;
 }	t_matrix;
 
 t_matrix	*init_matrix(t_pair_int size);
