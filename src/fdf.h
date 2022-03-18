@@ -31,5 +31,6 @@ typedef struct s_data {
 
 void		ee_exit(const char *str);
 t_matrix	*load_map(const char *name);
+void        print_matrix(t_matrix *mas);
 
 #endif

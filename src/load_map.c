@@ -90,17 +90,8 @@ t_matrix	*load_map(const char *name)
 		if (str == NULL)
 			break ;
 		parse(str, ' ', map->arr + i * map->width);
-        for (int j = 0; j < map->width; ++j)
-            printf("%3d", *(map->arr + i * map->width + j));
-        printf("\n");
         free(str);
+        i++;
 	}
-    for (int i = 0; i < map->height; ++i)
-    {
-        for (int j = 0; j < map->width; ++j)
-            printf("%3d", *(map->arr + i * map->width + j));
-        printf("\n");
-    }
-    print_matrix(map);
 	return (map);
 }
