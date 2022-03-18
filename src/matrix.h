@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:58:42 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 16:02:29 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:22:21 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #  include <stdlib.h>
 # endif
 
-typedef	struct s_pair_int
+typedef struct s_pair_int
 {
 	int	first;
 	int	second;

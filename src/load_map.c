@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:09:49 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 16:09:22 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:23:19 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static t_pair_int	check_size_map(const char *name)
 	res.first = ft_count_elem(str, ' ');
 	while (str != NULL)
 	{
-        ++res.second;
+		++res.second;
 		free(str);
 		str = get_next_line(fd);
 	}
@@ -59,7 +59,7 @@ void	parse(char *str, char c, int *arr)
 		while (*str != c && *str)
 			++str;
 		if (*str == '\0')
-			break;
+			break ;
 		++str;
 	}
 }
@@ -82,7 +82,7 @@ t_matrix	*load_map(const char *name)
 	{
 		str = get_next_line(fd);
 		if (str == NULL)
-			break;
+			break ;
 		parse(str, ' ', map->arr + i * map->height);
 		free(str);
 	}
