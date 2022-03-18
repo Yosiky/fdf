@@ -17,12 +17,17 @@ static int	ft_count_elem(const char *str, char c)
 	int	res;
 
 	res = 0;
-	while (str != NULL && *str)
-	{
-		if (*str == c)
-			++res;
-		++str;
-	}
+    if (str == NULL)
+        return (0);
+    while (*str)
+    {
+        if (*str != c)
+            ++res;
+        while (*str && *str != c)
+            ++str;
+        while (*str && *str == c)
+            ++str;
+    }
 	return (res);
 }
 
@@ -58,9 +63,10 @@ void	parse(char *str, char c, int *arr)
 		arr[i++] = ft_atoi(str);
 		while (*str != c && *str)
 			++str;
+        while (*str == c)
+            ++str;
 		if (*str == '\0')
 			break ;
-		++str;
 	}
 }
 
@@ -83,8 +89,18 @@ t_matrix	*load_map(const char *name)
 		str = get_next_line(fd);
 		if (str == NULL)
 			break ;
-		parse(str, ' ', map->arr + i * map->height);
-		free(str);
+		parse(str, ' ', map->arr + i * map->width);
+        for (int j = 0; j < map->width; ++j)
+            printf("%3d", *(map->arr + i * map->width + j));
+        printf("\n");
+        free(str);
 	}
+    for (int i = 0; i < map->height; ++i)
+    {
+        for (int j = 0; j < map->width; ++j)
+            printf("%3d", *(map->arr + i * map->width + j));
+        printf("\n");
+    }
+    print_matrix(map);
 	return (map);
 }
