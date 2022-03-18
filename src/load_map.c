@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:09:49 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 16:01:59 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/18 16:09:22 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,15 +78,11 @@ t_matrix	*load_map(const char *name)
 	if (fd < 0)
 		ee_exit("Error: cann't open file\n");
 	i = 0;
-	while (i++ < map->height)
+	while (1)
 	{
 		str = get_next_line(fd);
 		if (str == NULL)
-		{
-			free_matrix(map);
-			map = NULL;
 			break;
-		}
 		parse(str, ' ', map->arr + i * map->height);
 		free(str);
 	}
