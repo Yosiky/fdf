@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 17:35:19 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/19 16:05:48 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 # include "../libft/get_next_line.h"
 # include "../libft/libft.h"
 
-# define WINDOW_WIDTH 1920
-# define WINDOW_HEIGHT 1080
+# define WINDOW_WIDTH 800
+# define WINDOW_HEIGHT 600
 
 typedef struct s_data
 {
@@ -44,5 +44,6 @@ typedef struct s_position
 void		ee_exit(const char *str);
 t_matrix	*load_map(const char *name);
 void        print_matrix(t_matrix *mas);
+void		draw(t_data *img, t_position *pos);
 
 #endif
