@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:58:42 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 16:22:21 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 00:24:37 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ typedef struct s_matrix
 
 t_matrix	*init_matrix(t_pair_int size);
 void		free_matrix(t_matrix *m);
+int			matrix_get(t_matrix *m, int x, int y);
 
 #endif

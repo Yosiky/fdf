@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/19 16:05:48 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 00:25:12 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@
 
 # define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 600
+
+# define COLOR_BACKGROUND 0x00000000
+# define COLOR_BLUE 0x000000FF
+# define COLOR_RED 0x00FF0000
+# define COLOR_WHITE 0xFFFFFFFF
 
 typedef struct s_data
 {

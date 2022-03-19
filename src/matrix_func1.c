@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:02:53 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 16:00:48 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 00:24:33 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ t_matrix	*init_matrix(t_pair_int size)
 		return (NULL);
 	}
 	return (res);
+}
+
+int	matrix_get(t_matrix *m, int x, int y)
+{
+	return (m->arr[y * m->width + x]);
 }
