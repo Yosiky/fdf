@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 12:36:17 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:36:52 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	int		m;
 
 	color = COLOR_WHITE;
-	if (matrix_get(img->map, x, y) > 0)
+	if (matrix_get(img->map, a.x, a.y) > 0)
 		color = COLOR_RED;
 	a.x *= pos->zoom;
 	b.x *= pos->zoom;
