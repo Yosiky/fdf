@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 12:34:44 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:36:17 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	int		color;
 	int		m;
 
+	color = COLOR_WHITE;
+	if (matrix_get(img->map, x, y) > 0)
+		color = COLOR_RED;
 	a.x *= pos->zoom;
 	b.x *= pos->zoom;
 	a.y *= pos->zoom;
 	b.y *= pos->zoom;
-	color = COLOR_WHITE;
 	d = init_point(b.x - a.x, b.y - a.y);
 	m = MAX(abs((int)d.x), abs((int)d.y));
 	d.x /= m;
@@ -53,7 +55,6 @@ void	draw(t_data *img, t_position *pos)
 	int	j;
 
 	i = -1;
-	draw_line(init_point(0, 0), init_point(100, 100), pos, img);
 	while (++i < img->map->width)
 	{
 		j = -1;
