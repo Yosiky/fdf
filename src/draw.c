@@ -20,29 +20,35 @@ void	putpixel(t_data *img, int x, int y, unsigned int col)
 	// move img->bits_per_pixel / 8
 }
 
+void	offset(t_point *a, int z, t_position *pos)
+{
+	a->x *= pos->zoom;
+	a->y *= pos->zoom;
+	a->x = (a->x - a->y) * cos(pos->angle[0]);
+	a->y = (a->x + a->y) * sin(pos->angle[0]) - z;
+	a->x += pos->x;
+	a->y += pos->y;
+}
+
 void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 {
 	t_point	d;
 	int		color;
 	int		m;
+	t_point z;
 
+	z = init_point(matrix_get(img->map, a.x, a.y), matrix_get(img->map, b.x, b.y));
 	color = COLOR_WHITE;
-	if (matrix_get(img->map, a.x, a.y) > 0)
+	if (z.x > 0 || z.y > 0)
 		color = COLOR_RED;
-	a.x *= pos->zoom;
-	b.x *= pos->zoom;
-	a.y *= pos->zoom;
-	b.y *= pos->zoom;
+	offset(&a, z.x, pos);
+	offset(&b, z.y, pos);
 	d = init_point(b.x - a.x, b.y - a.y);
 	m = MAX(abs((int)d.x), abs((int)d.y));
 	d.x /= m;
 	d.y /= m;
-	a.x += pos->x;
-	b.x += pos->x;
-	a.y += pos->y;
-	b.y += pos->y;
 	while ((int)(a.x - b.x) || (int)(a.y - b.y))
-    {
+    	{
 		putpixel(img, a.x, a.y, color);
 		a.x += d.x;
 		a.y += d.y;

@@ -47,7 +47,7 @@ typedef struct s_position
 	int	x;
 	int	y;
 	int	z;
-	int	angle[3];
+	float	angle[3];
 	int	zoom;
 }	t_position;
 

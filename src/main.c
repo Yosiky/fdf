@@ -29,10 +29,10 @@ void	print_matrix(t_matrix *map)
 
 static void	init_pos(t_position *a)
 {
-	a->x = 0;
-	a->y = 0;
+	a->x = 200;
+	a->y = 200;
 	a->z = 0;
-	a->angle[0] = 0;
+	a->angle[0] = 0.8;
 	a->angle[1] = 0;
 	a->angle[2] = 0;
 	a->zoom = 20;
