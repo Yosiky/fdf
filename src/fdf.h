@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 10:52:27 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:08:11 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_position
 	int	y;
 	int	z;
 	int	angle[3];
+	int	zoom;
 }	t_position;
 
 void		ee_exit(const char *str);
