@@ -14,6 +14,8 @@
 
 void	putpixel(t_data *img, int x, int y, unsigned int col)
 {
+    if (x < 0 || y < 0 || x >= WINDOW_WIDTH || y >= WINDOW_HEIGHT)
+        return ;
 	img->addr[y * img->line_length / 4 + x] = col;
 	// move img->bits_per_pixel / 8
 }
@@ -38,7 +40,7 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	a.y += pos->y;
 	b.y += pos->y;
 	while (a.x < b.x)
-	{
+    {
 		putpixel(img, a.x, a.y, color);
 		a.x += d.x;
 		a.y += d.y;
