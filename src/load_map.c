@@ -21,7 +21,7 @@ static int	ft_count_elem(const char *str, char c)
         return (0);
     while (*str)
     {
-        if (*str != c)
+        if (*str != c && (ft_isdigit(*str) || *str == '+' || *str == '-'))
             ++res;
         while (*str && *str != c)
             ++str;
