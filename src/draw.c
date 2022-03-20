@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 00:25:26 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 10:57:45 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,42 @@ int		choice_color(t_data *img, int x, int y)
 		return (COLOR_WHITE);
 }
 
+void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
+{
+	t_point	d;
+	int		color;
 
-void	draw(t_data *img, __attribute__((unused))t_position *pos)
+	color = COLOR_WHITE;
+	d = init_point(b.x - a.x, b.y - a.y);
+	d.x /= MAX(abs((int)d.x), abs((int)d.y));
+	d.y /= MAX(abs((int)d.x), abs((int)d.y));
+	a.x += pos->x;
+	b.x += pos->x;
+	a.y += pos->y;
+	b.y += pos->y;
+	while (a.x < b.x)
+	{
+		putpixel(img, a.x, a.y, color);
+		a.x += d.x;
+		d.y += d.y;
+	}
+}
+
+void	draw(t_data *img, t_position *pos)
 {
 	int	i;
 	int	j;
-	int	color;
 
 	i = -1;
-	while (++i < WINDOW_HEIGHT)
+	while (++i < img->map->width)
 	{
 		j = -1;
-		while (++j < WINDOW_WIDTH)
+		while (++j < img->map->height)
 		{
-			color = choice_color(img, i - pos->y, j - pos->x);
-			putpixel(img, i, j, color);
+			if (i < img->map->width - 1)
+				draw_line(init_point(i, j), init_point(i + 1, j), pos, img);
+			if (j < img->map->height - 1)
+				draw_line(init_point(i, j), init_point(i, j + 1), pos, img);
 		}
 	}
 }

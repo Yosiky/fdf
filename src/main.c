@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 00:25:51 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 10:58:06 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	main(int argc, char **argv)
 		init_pos(&pos);
 		mlx = mlx_init();
 		mlx_win = mlx_new_window(mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "fdf");
-		mlx_loop(mlx);
-		img.addr = (int *)mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
+        img.img = mlx_new_image(mlx, WINDOW_WIDTH, WINDOW_HEIGHT);
+        img.addr = (int *)mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length,&img.endian);
 		draw(&img, &pos);
 		mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 		mlx_loop(mlx);

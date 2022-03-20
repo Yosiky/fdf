@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 00:25:12 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 10:52:27 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <mlx.h>
 # include <fcntl.h>
 # include <unistd.h>
+# include <math.h>
 # include "matrix.h"
+# include "point.h"
 # include "../libft/get_next_line.h"
 # include "../libft/libft.h"
 
@@ -27,6 +29,8 @@
 # define COLOR_BLUE 0x000000FF
 # define COLOR_RED 0x00FF0000
 # define COLOR_WHITE 0xFFFFFFFF
+
+# define MAX(a, b) ((a) > (b) ? (a) : (b))
 
 typedef struct s_data
 {
@@ -49,6 +53,6 @@ typedef struct s_position
 void		ee_exit(const char *str);
 t_matrix	*load_map(const char *name);
 void        print_matrix(t_matrix *mas);
-void		draw(t_data *img, t_position *pos);
+void	    draw(t_data *img, t_position *pos);
 
 #endif
