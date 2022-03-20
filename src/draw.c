@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 12:07:56 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:34:44 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	b.x += pos->x;
 	a.y += pos->y;
 	b.y += pos->y;
-	while (a.x < b.x)
+	while ((int)(a.x - b.x) || (int)(a.y - b.y))
     {
 		putpixel(img, a.x, a.y, color);
 		a.x += d.x;
