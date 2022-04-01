@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 14:01:36 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:27:58 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	offset(t_point *a, int z, t_position *pos)
 	a->x *= pos->zoom;
 	a->y *= pos->zoom;
 	a->x = (a->x - a->y) * cos(pos->angle[0]);
-	a->y = (a->x + a->y) * sin(pos->angle[0]) - z;
+	a->y = (a->x + a->y) * sin(pos->angle[0]) - z * sin(pos->angle[0]);
 	a->x += pos->x;
 	a->y += pos->y;
 }
@@ -52,6 +52,8 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 		putpixel(img, a.x, a.y, color);
 		a.x += d.x;
 		a.y += d.y;
+		if (a.x < 0 || a.y < 0 || a.x > WINDOW_WIDTH || a.y > WINDOW_HEIGHT)
+			break ;
 	}
 }
 
@@ -61,6 +63,7 @@ void	draw(t_data *img, t_position *pos)
 	int	j;
 
 	i = -1;
+	ft_memset(img->addr, 0, WINDOW_HEIGHT * WINDOW_HEIGHT * 4 * 4);
 	while (++i < img->map->width)
 	{
 		j = -1;

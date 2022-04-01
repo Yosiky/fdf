@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:03:54 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 13:44:08 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:52:16 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,13 @@
 #  define KEY_DOWN		65364
 #  define KEY_RIGHT		65363
 #  define KEY_LEFT		65361
+#  define Q_BUTTON		113
+#  define E_BUTTON		101
 #  define W_BUTTON		119
 #  define S_BUTTON		115
 #  define D_BUTTON		100
 #  define A_BUTTON		97
-#  define P_BUTON		112
+#  define P_BUTTON		112
 #  define I_BUTTON		105
 #  define PLUS_BUTTON	61
 #  define MINUS_BUTTON	45

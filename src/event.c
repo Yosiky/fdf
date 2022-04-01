@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:07:08 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 13:58:15 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:30:05 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ int	ft_close_window(void)
 int	key_press(int key)
 {
 	t_win	*win;
+	int		flag;
 
+	flag = 0;
 	if (key == KEY_ESC)
 		ft_close_window();
 	win = get_window();
@@ -40,9 +42,31 @@ int	key_press(int key)
 		win->pos->x += 10;
 	else if (key == A_BUTTON)
 		win->pos->x -= 10;
-
-	//draw(win->img, win->pos);
-	mlx_put_image_to_window(win->mlx, win->win, win->img->img, win->pos->x, win->pos->y);
+	else if (key == E_BUTTON)
+	{
+		flag = 1;
+		win->pos->angle[0] += 3.1415953565 / 18;
+	}
+	else if (key == Q_BUTTON)
+	{
+		flag = 1;
+		win->pos->angle[0] -= 3.1415953565 / 18;
+	}
+	else if (key == PLUS_BUTTON && !(win->pos->zoom & 0x40000000))
+	{
+		flag = 1;
+		win->pos->zoom *= 2;
+	}
+	else if (key == MINUS_BUTTON && win->pos->zoom > 1)
+	{
+		flag = 1;
+		win->pos->zoom /= 2;
+	}
+	
+		draw(win->img, win->pos);
+	//mlx_clear_window(win->mlx, win->win);
+	mlx_put_image_to_window(win->mlx, win->win, win->img->img, 0, 0);
+	
 	return (0);
 }
 
