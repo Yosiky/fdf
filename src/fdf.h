@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 12:57:36 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:33:34 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,12 @@ typedef struct s_win
 	t_position	*pos;
 }	t_win;
 
+ssize_t		write(int fd, const void *__restrict data, size_t size);
 void		ee_exit(const char *str);
 t_matrix	*load_map(const char *name);
 void        print_matrix(t_matrix *mas);
 void	    draw(t_data *img, t_position *pos);
-void	ft_close_window(int key_code, t_win *win);
+int			ft_close_window(void);
+t_win		*get_window(void);
 
 #endif

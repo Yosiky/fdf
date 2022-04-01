@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 13:09:29 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:32:20 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,29 +46,36 @@ void	init(t_win *win, t_data *img, t_position *pos)
 	img->addr = (int *)mlx_get_data_addr(img->img, &img->bits_per_pixel, &img->line_length,&img->endian);
 	win->img = img;
 	win->pos = pos;
-	//mlx_hook(win->win, 33, 0, ft_close_window, win->win);
+	mlx_hook(win->win, 33, 0, ft_close_window, NULL);
 
+}
+
+t_win	*get_window(void)
+{
+	static t_win	win;
+
+	return (&win);
 }
 
 int	main(int argc, char **argv)
 {
-	t_win		win;
+	t_win		*win;
 	t_data		img;
 	t_position	pos;
 
 	if (argc == 2)
 	{
+		win = get_window();
 		img.map = load_map((const char *)argv[1]);
 		if (img.map == NULL)
 			ee_exit("Error: failed to allocate memory for the card\n");
 		print_matrix(img.map);
 		init_pos(&pos);
-		init(&win, &img, &pos);
+		init(win, &img, &pos);
 		draw(&img, &pos);
-		mlx_put_image_to_window(win.mlx, win.win, img.img, 0, 0);
-		mlx_loop(win.mlx);
-	    free_matrix(img.map);
-
+		mlx_put_image_to_window(win->mlx, win->win, img.img, 0, 0);
+		mlx_loop(win->mlx);
+	    //free_matrix(img.map);
     }
 	else
 		ee_exit("Error: wrong input\nYou need write:\n./fdf [NAME MAP]\n");
