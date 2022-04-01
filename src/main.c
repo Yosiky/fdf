@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 13:32:20 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:39:32 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	init(t_win *win, t_data *img, t_position *pos)
 	win->img = img;
 	win->pos = pos;
 	mlx_hook(win->win, 33, 0, ft_close_window, NULL);
-
+	mlx_key_hook(win->win, key_press, NULL);
 }
 
 t_win	*get_window(void)
@@ -75,7 +75,6 @@ int	main(int argc, char **argv)
 		draw(&img, &pos);
 		mlx_put_image_to_window(win->mlx, win->win, img.img, 0, 0);
 		mlx_loop(win->mlx);
-	    //free_matrix(img.map);
     }
 	else
 		ee_exit("Error: wrong input\nYou need write:\n./fdf [NAME MAP]\n");

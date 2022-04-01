@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 13:33:34 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 13:40:37 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ t_matrix	*load_map(const char *name);
 void        print_matrix(t_matrix *mas);
 void	    draw(t_data *img, t_position *pos);
 int			ft_close_window(void);
+int	key_press(int key);
 t_win		*get_window(void);
 
 #endif
