@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 12:11:56 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 12:57:36 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <math.h>
 # include "matrix.h"
 # include "point.h"
+# include "event.h"
 # include "../libft/get_next_line.h"
 # include "../libft/libft.h"
 
@@ -51,9 +52,18 @@ typedef struct s_position
 	int	zoom;
 }	t_position;
 
+typedef struct s_win
+{
+	void		*win;
+	void		*mlx;
+	t_data		*img;
+	t_position	*pos;
+}	t_win;
+
 void		ee_exit(const char *str);
 t_matrix	*load_map(const char *name);
 void        print_matrix(t_matrix *mas);
 void	    draw(t_data *img, t_position *pos);
+void	ft_close_window(int key_code, t_win *win);
 
 #endif
