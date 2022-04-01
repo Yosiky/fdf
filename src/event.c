@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:07:08 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 15:30:05 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:49:09 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ int	key_press(int key)
 	{
 		flag = 1;
 		win->pos->angle[0] += 3.1415953565 / 18;
+
 	}
 	else if (key == Q_BUTTON)
 	{
 		flag = 1;
-		win->pos->angle[0] -= 3.1415953565 / 18;
+		win->pos->angle[1] -= 3.1415953565 / 18;
 	}
 	else if (key == PLUS_BUTTON && !(win->pos->zoom & 0x40000000))
 	{

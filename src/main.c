@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 14:45:35 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:48:56 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	init_pos(t_position *a)
 	a->y = 0;
 	a->z = 0;
 	a->angle[0] = 0.8;
-	a->angle[1] = 0;
+	a->angle[1] = 0.8;
 	a->angle[2] = 0;
 	a->zoom = 20;
 }
