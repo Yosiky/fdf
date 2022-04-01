@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 13:39:32 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:00:26 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	print_matrix(t_matrix *map)
 
 static void	init_pos(t_position *a)
 {
-	a->x = 200;
-	a->y = 200;
+	a->x = 0;
+	a->y = 0;
 	a->z = 0;
 	a->angle[0] = 0.8;
 	a->angle[1] = 0;

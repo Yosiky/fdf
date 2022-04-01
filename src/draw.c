@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 12:36:52 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:01:36 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	putpixel(t_data *img, int x, int y, unsigned int col)
 {
     if (x < 0 || y < 0 || x >= WINDOW_WIDTH || y >= WINDOW_HEIGHT)
         return ;
-	img->addr[y * img->line_length / 4 + x] = col;
+	img->addr[(y + 10) * img->line_length / 4 + x + 10] = col;
 	// move img->bits_per_pixel / 8
 }
 
