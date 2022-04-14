@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/14 14:07:48 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 14:25:11 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	offset(t_point *a, int z, t_position *pos)
 {
 	a->x *= pos->zoom;
 	a->y *= pos->zoom;
-	a->x = (a->x - a->y) * cos(pos->angle[0]);
-	a->y = (a->x + a->y) * sin(pos->angle[0]) - z * pos->zoom / 20;
+	a->x = (a->x) * cos(pos->angle[0]) - a->y * sin(pos->angle[1]);
+	a->y = (a->x) * sin(pos->angle[0]) + a->y * cos(pos->angle[1])  - z * pos->zoom / 20;
 	a->x += pos->x + WINDOW_WIDTH3;
 	a->y += pos->y + WINDOW_HEIGHT3;
 }
