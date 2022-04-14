@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/14 13:20:59 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 14:02:03 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	init_pos(t_position *a)
 	a->y = 0;
 	a->z = 0;
 	a->angle[0] = 0.8;
-	a->angle[1] = 0.8;
+	a->angle[1] = 0;
 	a->angle[2] = 0;
 	a->zoom = 20;
 }
@@ -55,7 +55,6 @@ int	main(int argc, char **argv)
 		img.map = load_map((const char *)argv[1]);
 		if (img.map == NULL)
 			ee_exit("Error: failed to allocate memory for the card\n");
-		print_matrix(img.map);
 		init_pos(&pos);
 		init(win, &img, &pos);
 		draw(&img, &pos);
