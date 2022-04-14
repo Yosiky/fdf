@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 15:27:58 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:17:29 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	putpixel(t_data *img, int x, int y, unsigned int col)
 {
-    if (x < 0 || y < 0 || x >= WINDOW_WIDTH || y >= WINDOW_HEIGHT)
-        return ;
+	if (x < 0 || y < 0 || x >= WINDOW_WIDTH || y >= WINDOW_HEIGHT)
+		return ;
 	img->addr[(y + 10) * img->line_length / 4 + x + 10] = col;
-	// move img->bits_per_pixel / 8
 }
 
 void	offset(t_point *a, int z, t_position *pos)
@@ -35,9 +34,10 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	t_point	d;
 	int		color;
 	int		m;
-	t_point z;
+	t_point	z;
 
-	z = init_point(matrix_get(img->map, a.x, a.y), matrix_get(img->map, b.x, b.y));
+	z = init_point(matrix_get(img->map, a.x, a.y),
+			matrix_get(img->map, b.x, b.y));
 	color = COLOR_WHITE;
 	if (z.x > 0 || z.y > 0)
 		color = COLOR_RED;
@@ -48,7 +48,7 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	d.x /= m;
 	d.y /= m;
 	while ((int)(a.x - b.x) || (int)(a.y - b.y))
-    	{
+	{
 		putpixel(img, a.x, a.y, color);
 		a.x += d.x;
 		a.y += d.y;

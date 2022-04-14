@@ -15,7 +15,7 @@ DIR_LIBFT		=	libft
 $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -O3 -c $< -o $@
 
-all: $(OBJ_DIR)
+all: $(OBJ_DIR) 
 	$(MAKE) -C $(DIR_LIBFT)
 	$(MAKE) -j $(NAME)
 
@@ -23,7 +23,7 @@ $(OBJ_DIR):
 	mkdir -p obj
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) $(DIR_LIBFT)/$(LIBFT) -lmlx -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJ) -L./$(DIR_LIBFT) -lft -lmlx -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	rm -rf $(OBJ)

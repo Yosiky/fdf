@@ -6,26 +6,11 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 15:48:56 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:20:59 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
-
-#include <stdio.h>
-
-void	print_matrix(t_matrix *map)
-{
-	printf("MAP:\n");
-	printf("width = %d\n", map->width);
-	printf("height = %d\n", map->height);
-	for (int i = 0; i < map->height; ++i)
-	{
-        for (int j = 0; j < map->width; ++j)
-            printf("%3d", *(map->arr + i * map->width + j));
-		printf("\n");
-	}
-}
 
 static void	init_pos(t_position *a)
 {
@@ -43,7 +28,8 @@ void	init(t_win *win, t_data *img, t_position *pos)
 	win->mlx = mlx_init();
 	win->win = mlx_new_window(win->mlx, WINDOW_WIDTH, WINDOW_HEIGHT, "fdf");
 	img->img = mlx_new_image(win->mlx, WINDOW_WIDTH * 2, WINDOW_HEIGHT * 2);
-	img->addr = (int *)mlx_get_data_addr(img->img, &img->bits_per_pixel, &img->line_length,&img->endian);
+	img->addr = (int *)mlx_get_data_addr(img->img,
+			&img->bits_per_pixel, &img->line_length, &img->endian);
 	win->img = img;
 	win->pos = pos;
 	mlx_hook(win->win, 33, 0, ft_close_window, NULL);
@@ -73,10 +59,11 @@ int	main(int argc, char **argv)
 		init_pos(&pos);
 		init(win, &img, &pos);
 		draw(&img, &pos);
-		mlx_put_image_to_window(win->mlx, win->win, img.img, win->pos->x, win->pos->y);
+		mlx_put_image_to_window(win->mlx, win->win, img.img,
+			win->pos->x, win->pos->y);
 		mlx_loop(win->mlx);
-    }
+	}
 	else
 		ee_exit("Error: wrong input\nYou need write:\n./fdf [NAME MAP]\n");
-	return (0);	
+	return (0);
 }

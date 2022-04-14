@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:09:49 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 16:23:19 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:32:19 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@ static int	ft_count_elem(const char *str, char c)
 	int	res;
 
 	res = 0;
-    if (str == NULL)
-        return (0);
-    while (*str)
-    {
-        if (*str != c && (ft_isdigit(*str) || *str == '+' || *str == '-'))
-            ++res;
-        while (*str && *str != c)
-            ++str;
-        while (*str && *str == c)
-            ++str;
-    }
+	if (str == NULL)
+		return (0);
+	while (*str)
+	{
+		if (*str != c && (ft_isdigit(*str) || *str == '+' || *str == '-'))
+			++res;
+		while (*str && *str != c)
+			++str;
+		while (*str && *str == c)
+			++str;
+	}
 	return (res);
 }
 
@@ -63,8 +63,8 @@ void	parse(char *str, char c, int *arr)
 		arr[i++] = ft_atoi(str);
 		while (*str != c && *str)
 			++str;
-        while (*str == c)
-            ++str;
+		while (*str == c)
+			++str;
 		if (*str == '\0')
 			break ;
 	}
@@ -90,8 +90,8 @@ t_matrix	*load_map(const char *name)
 		if (str == NULL)
 			break ;
 		parse(str, ' ', map->arr + i * map->width);
-        free(str);
-        i++;
+		free(str);
+		i++;
 	}
 	return (map);
 }

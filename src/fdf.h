@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/01 15:10:33 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:22:31 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <fcntl.h>
 # include <unistd.h>
 # include <math.h>
+# include <sys/param.h>
 # include "matrix.h"
 # include "point.h"
 # include "event.h"
@@ -31,8 +32,6 @@
 # define COLOR_RED 0x00FF0000
 # define COLOR_WHITE 0xFFFFFFFF
 
-# define MAX(a, b) ((a) > (b) ? (a) : (b))
-
 typedef struct s_data
 {
 	void		*img;
@@ -45,10 +44,10 @@ typedef struct s_data
 
 typedef struct s_position
 {
-	int	x;
-	int	y;
-	int	z;
-	float	angle[3];
+	int				x;
+	int				y;
+	int				z;
+	float			angle[3];
 	unsigned int	zoom;
 }	t_position;
 
@@ -63,10 +62,10 @@ typedef struct s_win
 ssize_t		write(int fd, const void *__restrict data, size_t size);
 void		ee_exit(const char *str);
 t_matrix	*load_map(const char *name);
-void        print_matrix(t_matrix *mas);
-void	    draw(t_data *img, t_position *pos);
+void		print_matrix(t_matrix *mas);
+void		draw(t_data *img, t_position *pos);
 int			ft_close_window(void);
-int	key_press(int key);
+int			key_press(int key);
 t_win		*get_window(void);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 10:49:14 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 10:52:43 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:24:14 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_point	init_point(float x, float y)
 {
-	t_point res;
+	t_point	res;
 
 	res.x = x;
 	res.y = y;

@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 10:49:01 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/20 10:50:16 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/14 13:31:09 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ typedef struct s_point
 	float	y;
 }	t_point;
 
-t_point init_point(float x, float y);
+t_point	init_point(float x, float y);
 
 #endif
