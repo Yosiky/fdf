@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:07:08 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/14 14:25:01 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/17 14:04:54 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	ft_close_window(void)
 	mlx_destroy_window(win->mlx, win->win);
 	mlx_destroy_image(win->mlx, win->img->img);
 	free_matrix(win->img->map);
-	win->img->map = NULL;
 	exit(0);
 	return (0);
 }
@@ -43,7 +42,7 @@ int	key_press(int key)
 	else if (key == E_BUTTON)
 		win->pos->angle[0] += PI / 18;
 	else if (key == Q_BUTTON)
-		win->pos->angle[1] += PI / 18;
+		win->pos->angle[0] -= PI / 18;
 	else if (key == PLUS_BUTTON && !(win->pos->zoom & 0x40000000))
 		win->pos->zoom *= 2;
 	else if (key == MINUS_BUTTON && win->pos->zoom > 1)

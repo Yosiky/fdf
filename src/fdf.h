@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/14 14:03:23 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/17 14:45:36 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@
 # define PI 3.1415953565
 # define WINDOW_WIDTH 800
 # define WINDOW_HEIGHT 600
-# define WINDOW_WIDTH3 WINDOW_WIDTH / 3
-# define WINDOW_HEIGHT3 WINDOW_HEIGHT / 3
 
 # define COLOR_BACKGROUND 0x00000000
 # define COLOR_BLUE 0x000000FF

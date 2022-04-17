@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/14 14:25:11 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/17 14:48:09 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@ void	putpixel(t_data *img, int x, int y, unsigned int col)
 
 void	offset(t_point *a, int z, t_position *pos)
 {
+	static int	width3 = WINDOW_WIDTH / 3;
+	static int	height3 = WINDOW_HEIGHT / 3;
+
 	a->x *= pos->zoom;
 	a->y *= pos->zoom;
-	a->x = (a->x) * cos(pos->angle[0]) - a->y * sin(pos->angle[1]);
-	a->y = (a->x) * sin(pos->angle[0]) + a->y * cos(pos->angle[1])  - z * pos->zoom / 20;
-	a->x += pos->x + WINDOW_WIDTH3;
-	a->y += pos->y + WINDOW_HEIGHT3;
+	a->x = (a->x - a->y);
+	a->y = (a->x + a->y + a->y) / 2 - z * pos->zoom / 20;
+	a->x += pos->x + width3;
+	a->y += pos->y + height3;
 }
 
 void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
