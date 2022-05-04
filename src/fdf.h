@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/17 14:45:36 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:47:29 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "matrix.h"
 # include "point.h"
 # include "event.h"
+# include <stdint.h>
 # include "../libft/get_next_line.h"
 # include "../libft/libft.h"
 
@@ -68,5 +69,6 @@ void		draw(t_data *img, t_position *pos);
 int			ft_close_window(void);
 int			key_press(int key);
 t_win		*get_window(void);
+int			get_color(int z, int l, int h);
 
 #endif
