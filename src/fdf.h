@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/29 12:47:29 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:58:54 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 # define PI 3.1415953565
 # define WINDOW_WIDTH 800
-# define WINDOW_HEIGHT 600
+# define WINDOW_HEIGHT 800
 
 # define COLOR_BACKGROUND 0x00000000
 # define COLOR_BLUE 0x000000FF
@@ -50,7 +50,7 @@ typedef struct s_position
 	int				y;
 	int				z;
 	float			angle[3];
-	unsigned int	zoom;
+	long long		zoom;
 }	t_position;
 
 typedef struct s_win
