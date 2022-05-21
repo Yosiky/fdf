@@ -6,14 +6,14 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/05/17 13:58:54 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/21 15:59:23 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FDF_H
 # define FDF_H
 
-# include <mlx.h>
+# include "../minilibx/mlx.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <math.h>

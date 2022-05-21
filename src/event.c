@@ -6,11 +6,12 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 18:07:08 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/17 14:04:54 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/21 15:35:24 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "event.h"
 
 int	ft_close_window(void)
 {
@@ -39,10 +40,6 @@ int	key_press(int key)
 		win->pos->x += 10;
 	else if (key == A_BUTTON)
 		win->pos->x -= 10;
-	else if (key == E_BUTTON)
-		win->pos->angle[0] += PI / 18;
-	else if (key == Q_BUTTON)
-		win->pos->angle[0] -= PI / 18;
 	else if (key == PLUS_BUTTON && !(win->pos->zoom & 0x40000000))
 		win->pos->zoom *= 2;
 	else if (key == MINUS_BUTTON && win->pos->zoom > 1)

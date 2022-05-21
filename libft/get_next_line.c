@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 15:51:58 by eestelle          #+#    #+#             */
-/*   Updated: 2022/03/18 15:50:55 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/21 15:30:26 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static	int	ft_init(int fd, t_buff *buff, t_lst **lbegin, t_lst ***lend)
 {
-	if (fd < 0 || fd >= FOPEN_MAX)
+	if (fd < 0 || fd >= OPEN_MAX)
 		return (1);
 	if (BUFFER_SIZE <= 0)
 		return (1);

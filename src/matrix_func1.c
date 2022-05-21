@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:02:53 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/29 12:52:00 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/21 15:31:31 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int	matrix_get_min(t_matrix *m)
 	int		i;
 	int64_t	len;
 
-	m->arr[0];
 	i = 1;
 	len = m->width * m->height;
 	while (i < len)
@@ -67,7 +66,6 @@ int	matrix_get_max(t_matrix *m)
 	int		i;
 	int64_t	len;
 
-	m->arr[0];
 	i = 1;
 	len = m->width * m->height;
 	while (i < len)
