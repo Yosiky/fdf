@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/29 12:51:31 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:26:46 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,33 +32,14 @@ void	offset(t_point *a, int z, t_position *pos)
 	a->y += pos->y + height3;
 }
 
-int	*get_low(void)
-{
-	static int	l;
-
-	return (&l);
-}
-
-int	*get_high(void)
-{
-	static int	h;
-	return (&h);
-}
-
 void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 {
 	t_point	d;
-	int		color;
 	int		m;
 	t_point	z;
-	int	*l = get_low();
-	int	*h = get_high();
 
 	z = init_point(matrix_get(img->map, a.x, a.y),
 			matrix_get(img->map, b.x, b.y));
-	color = COLOR_WHITE;
-	if (z.x > 0 || z.y > 0)
-		color = COLOR_RED;
 	offset(&a, z.x, pos);
 	offset(&b, z.y, pos);
 	d = init_point(b.x - a.x, b.y - a.y);
@@ -67,7 +48,7 @@ void	draw_line(t_point a, t_point b, t_position *pos, t_data *img)
 	d.y /= m;
 	while ((int)(a.x - b.x) || (int)(a.y - b.y))
 	{
-		putpixel(img, a.x, a.y, get_color(z.x, *l, *h));
+		putpixel(img, a.x, a.y, get_color(z.x));
 		a.x += d.x;
 		a.y += d.y;
 		if (a.x < 0 || a.y < 0 || a.x > WINDOW_WIDTH || a.y > WINDOW_HEIGHT)

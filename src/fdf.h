@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/05/21 15:59:23 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/22 15:29:36 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ void		draw(t_data *img, t_position *pos);
 int			ft_close_window(void);
 int			key_press(int key);
 t_win		*get_window(void);
-int			get_color(int z, int l, int h);
+int			get_color(int z);
+int			*get_low(void);
+int			*get_high(void);
 
 #endif

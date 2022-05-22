@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/04/17 13:50:13 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:19:20 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	init(t_win *win, t_data *img, t_position *pos)
 			&img->bits_per_pixel, &img->line_length, &img->endian);
 	win->img = img;
 	win->pos = pos;
-	mlx_hook(win->win, 33, 0, ft_close_window, NULL);
+	mlx_hook(win->win, 17, 0, ft_close_window, NULL);
 	mlx_key_hook(win->win, key_press, NULL);
 }
 

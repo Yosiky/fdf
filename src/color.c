@@ -6,23 +6,23 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 11:41:36 by eestelle          #+#    #+#             */
-/*   Updated: 2022/05/17 13:58:30 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/05/22 16:08:01 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int	get_color(int z, int l, int h)
+int	get_color(int z)
 {
 	float	color;
 	int		green;
 	int		red;
 	int		blue;
 
-	if (h == l)
+	if (*(get_high()) == *(get_low()))
 		return (189 << 8);
-	color = (float)(z) / (h - l);
-	green = 189 + (6 - 189) * color;
+	color = (float)(z) / (*(get_high()) - *(get_low()));
+	green = 189 - 183 * color;
 	red = 133 * color;
 	blue = 57 + 112 * color;
 	return ((red << 16) + (green << 8) + blue);
