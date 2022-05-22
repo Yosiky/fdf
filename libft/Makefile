@@ -44,15 +44,16 @@ OBJS_DIR =	objects
 
 OBJ =		${addprefix ${OBJS_DIR}/,${SRC:=.o}}
 
-CFLAGS =	-Wall -Wextra -Werror -g 
+CFLAGS =	-Wall -Wextra -Werror
 #-O3 -ffast-math
 CC =		gcc
 
 $(OBJS_DIR)/%.o: %.c		
-	${CC} ${CFLAGS} -c $< -o $@
+	@${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME):	${OBJS_DIR} ${OBJ}
-	ar cr ${NAME} ${OBJ}
+	@ar cr $@ ${OBJ}
+	@ranlib $@
 
 all:		${NAME}
 
@@ -60,10 +61,10 @@ ${OBJS_DIR}:
 	mkdir -p ${OBJS_DIR}
 
 clean:
-	rm -rf ${OBJ}
+	@rm -rf ${OBJ}
 
 fclean: 	clean
-	rm -rf ${NAME}
+	@rm -rf ${NAME}
 
 re:			\
 			fclean	\
