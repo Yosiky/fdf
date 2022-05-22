@@ -13,7 +13,8 @@ SRC				=	color.c			\
 					load_map.c		\
 					main.c			\
 					matrix_func1.c	\
-					point_func1.c
+					point_func1.c	\
+					setting.c
 
 OBJ				=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 HEADER			=	src/event.h		\
@@ -42,7 +43,7 @@ $(NAME): $(OBJ) $(HEADER)
 	@$(CC) $(OBJ) libft/libft.a minilibx/libmlx.a -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
-	@rm -rf $(OBJ)
+	@rm -rf $(OBJ_DIR)
 	@$(MAKE) -C $(DIR_LIBFT) clean
 
 fclean: clean
