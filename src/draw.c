@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 16:27:09 by eestelle          #+#    #+#             */
-/*   Updated: 2022/05/22 15:26:46 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:14:26 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	draw(t_data *img, t_position *pos)
 	int	j;
 
 	i = -1;
-	*(get_low()) = matrix_get_min(img->map);
-	*(get_high()) = matrix_get_max(img->map);
 	ft_memset(img->addr, 0, WINDOW_HEIGHT * WINDOW_HEIGHT * 4 * 4);
 	while (++i < img->map->width)
 	{

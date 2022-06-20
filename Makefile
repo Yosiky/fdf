@@ -14,7 +14,6 @@ SRC				=	color.c			\
 					main.c			\
 					matrix_func1.c	\
 					point_func1.c	\
-					setting.c
 
 OBJ				=	$(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 HEADER			=	src/event.h		\

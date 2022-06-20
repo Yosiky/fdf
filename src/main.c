@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:13:10 by eestelle          #+#    #+#             */
-/*   Updated: 2022/05/22 16:19:20 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:58:43 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@ static void	init_pos(t_position *a)
 	a->x = 0;
 	a->y = 0;
 	a->z = 0;
-	a->angle[0] = 0.8;
-	a->angle[1] = 0.8;
-	a->angle[2] = 0;
 	a->zoom = 20;
 }
 
@@ -34,6 +31,8 @@ void	init(t_win *win, t_data *img, t_position *pos)
 	win->pos = pos;
 	mlx_hook(win->win, 17, 0, ft_close_window, NULL);
 	mlx_key_hook(win->win, key_press, NULL);
+	matrix_get_min(img->map);
+	matrix_get_max(img->map);
 }
 
 t_win	*get_window(void)

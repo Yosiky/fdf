@@ -6,7 +6,7 @@
 /*   By: eestelle <eestelle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 21:12:50 by eestelle          #+#    #+#             */
-/*   Updated: 2022/05/22 15:29:36 by eestelle         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:54:24 by eestelle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "../libft/libft.h"
 
 # define PI 3.1415953565
-# define WINDOW_WIDTH 800
+# define WINDOW_WIDTH  800
 # define WINDOW_HEIGHT 800
 
 # define COLOR_BACKGROUND 0x00000000
@@ -49,7 +49,6 @@ typedef struct s_position
 	int				x;
 	int				y;
 	int				z;
-	float			angle[3];
 	long long		zoom;
 }	t_position;
 
@@ -70,7 +69,5 @@ int			ft_close_window(void);
 int			key_press(int key);
 t_win		*get_window(void);
 int			get_color(int z);
-int			*get_low(void);
-int			*get_high(void);
 
 #endif
