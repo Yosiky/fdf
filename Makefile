@@ -39,7 +39,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ) libft/libft.a minilibx/libmlx.a -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@$(CC) $(OBJ)  -Llibft -Lminilibx -lft -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
