@@ -39,11 +39,12 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(NAME): $(OBJ) $(HEADER)
-	@$(CC) $(OBJ)  -Llibft -Lminilibx -lft -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	@$(CC) $(OBJ)  -Llibft -Lminilibx -lft -lmlx -lXext -lX11 -lm -o $(NAME)
 
 clean:
 	@rm -rf $(OBJ_DIR)
 	@$(MAKE) -C $(DIR_LIBFT) clean
+	@$(MAKE) -C $(DIR_MLX) clean
 
 fclean: clean
 	@rm -rf $(NAME)
