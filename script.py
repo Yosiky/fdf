@@ -22,6 +22,8 @@ files = ['./test_maps/basictest.fdf',
 './test_maps/pyra.fdf',
 './test_maps/pylone.fdf']
 
+os.system("make");
+
 for i in files:
 	print('map is ', i)
 	os.system('./fdf ' + i)
